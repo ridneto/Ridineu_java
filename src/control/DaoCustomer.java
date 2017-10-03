@@ -54,9 +54,11 @@ public class DaoCustomer {
                     active = false;
                 }
                 
-                customer = new Customer(rs.getInt("Id_customer"), rs.getString("cpf_cnpj"),
-                                        rs.getString("Nm_customer"), active, rs.getDouble("vl_total"));
-                
+                customer = new Customer(rs.getInt("Id_customer"));
+                customer.setCpf_cnpj(rs.getString("cpf_cnpj"));
+                customer.setActive(active);
+                customer.setValor_total(rs.getDouble("vl_total"));
+                customer.setNome(rs.getString("Nm_customer"));
                 customers.add(customer);
             }
         }

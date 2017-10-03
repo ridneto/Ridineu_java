@@ -384,10 +384,15 @@ public class guiCliente extends javax.swing.JFrame {
                 }else{
                     cpfcnpj = mskCPF.getText().replace("-", "").replace("/", "");
                 }
+                
                 Double valor = Double.parseDouble(mskValorTotal.getText().replaceAll("\\.","").replace(",","."));
-                customer = new Customer(Integer.parseInt(txtID.getText()), cpfcnpj,
-                  txtNome.getText(), rdbContaAtiva.isSelected(), valor);
+                customer = new Customer(Integer.parseInt(txtID.getText()));
+                customer.setCpf_cnpj(cpfcnpj);
+                customer.setNome(txtNome.getText());
+                customer.setActive(rdbContaAtiva.isSelected());
+                customer.setValor_total(valor);
                 daocustomer.inserir(customer);
+                
                 btnLimparActionPerformed(evt);
                 gerarMediaFinal();
             }
