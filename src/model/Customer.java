@@ -11,18 +11,24 @@ public class Customer{
     private boolean active;
     private double valor_total;
 
-    public Customer(int id, String cpf_cnpj, String nome, boolean active, double valor_total) {
+    public Customer(int id) {
         this.id = id;
-        this.cpf_cnpj = cpf_cnpj;
-        this.nome = nome;
-        this.active = active;
-        this.valor_total = valor_total;
     }
 
     public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCpf_cnpj(String cpf_cnpj) {
+        this.cpf_cnpj = cpf_cnpj;
+    }
+    
+    
+    
     public String getCpf_cnpj() {
         return cpf_cnpj;
     }
